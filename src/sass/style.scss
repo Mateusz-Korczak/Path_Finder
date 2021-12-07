@@ -1,0 +1,62 @@
+@import 'bootstrap';
+@import 'global';
+@import 'layout';
+@import 'normalize';
+@import 'typography';
+@import 'variables';
+@import 'pages/about';
+@import 'pages/finder';
+
+#pages {
+  > * {
+    display: none;
+  }
+
+  > .active {
+    display: flex;
+  }
+}
+/* body */
+body {
+  font-family: $fontMain;
+}
+/* header */
+.header {
+  height: 80vh;
+  background-image: url('../images/background.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.header-inner {
+  width: 100%;
+  height: 30%;
+  background: linear-gradient(transparent, black);
+}
+
+.header .title-wrapper {
+  h1 {
+    letter-spacing: 1rem;
+  }
+
+  p {
+    letter-spacing: 0.25rem;
+  }
+}
+
+.intro {
+  height: 140vh;
+}
+// @media (max-width: 580px) {
+//   .card {
+//     background-color: black;
+//   }
+//   .cards-wrapper {
+//     top: 50%;
+//     .card-body-right {
+//       transform: translateX(0%);
+//       white-space: normal;
+//     }
+//   }
+// }

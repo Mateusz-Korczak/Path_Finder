@@ -1,0 +1,15 @@
+/*  to miejsce na zmienne. Chodzi o zmienne z kolorami, nazwami czcionek, rozmiarami itd. Dzięki temu, że będą one przechowywane w jednym pliku, jesteśmy w stanie łatwo skonfigurować wygląd projektu, nawet nie patrząc na konkretne reguły! Wyobraź sobie np. taki scenariusz. Powiedzmy, że w tym pliku utworzysz zmienną $primaryColor, która definiuje kolor główny używany na stronie. Przyjmijmy, że nadaliśmy mu jakąś wartość np. #000. Następnie stylujemy mnóstwo elementów w kilku różnych sekcjach, ale zawsze korzystając ze zmiennych, np. właśnie ze zmiennej $primaryColor. Klient przyjmuje projekt, twierdzi, że wszystko gra, po czym po kilku miesiącach wraca do nas z prośbą o zmianę “głównego” koloru na inny. Czy po tak długim czasie “dłubanie” w pojedynczych regułach i podmienianie koloru byłoby przyjemne? Nie, ale nie musimy tego robić! Wystarczy, że zmienimy wartość zmiennej $primaryColor w pliku variables.scss i… tyle. Nie musimy nawet zaglądać do pozostałych plików. Brzmi świetnie, prawda? */
+
+// font-family: 'Source Sans Pro', sans-serif;
+// brown #C24E00
+// White #FFF
+// Green #2ECC71
+// Black #131313
+// łososiowy #E74C3C
+
+/* Przygotowujemy uniwersalne style
+Warto pochylić się teraz nad globalnymi stylami. Na początku zastanów się, jakie klasy dla “układu” (_layout.scss) mogą nam się przydać. Prawdopodobnie przyda się klasa .container. Jeśli nie zdecydowaliśmy się na Bootstrapa, to także klasy gridowe. A może dobrym pomysłem byłoby przygotowanie klasy .page dla stylu “podstrony”? Mogłaby to być np. klasa dająca jakiś mały padding z góry i dołu elementu. Oczywiście jeśli pojawią się jakieś kolory czy czcionki, to ich wartości/nazwy warto już teraz zapisywać w pliku _variables.scss, a tutaj w _layout.scss tylko wykorzystywać.
+
+Następnie warto zająć się plikiem typography.scss. Widzisz jakieś powtarzające się nagłówki czy style dla tekstu? Warto przygotować odpowiednie klasy.
+
+Czas zastanowić się teraz nad plikiem _global.scss. Warto ustalić wygląd całego body. Dobrze poszukać też uniwersalnych elementów. Może np. w kilku miejscach powtarza się podobny przycisk? Może kilka list wygląda podobnie? Odnajdź takie powtarzające się elementy i dodaj dla nich klasy. */
