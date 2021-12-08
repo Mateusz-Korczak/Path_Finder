@@ -17869,4 +17869,16 @@ body {
 .intro {
   height: 140vh;
 }
+
+.finder-wrapper .box {
+  background: #fff;
+  border-radius: 4px;
+  padding-bottom: 100%;
+}
+
+.finder-wrapper .col-lg-2,
+.finder-wrapper .col-md-3,
+.finder-wrapper .col-xs-6 {
+  margin-top: 24px !important;
+}
 /*# sourceMappingURL=style.css.map */

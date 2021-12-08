@@ -1,11 +1,13 @@
+/* global AOS */
+
 import { select, classNames } from './settings.js';
 import AboutPage from './components/AboutPage.js';
-import FinderPage from './components/FinderPage.js';
+import Finder from './components/Finder.js';
 
 const app = {
   initFinderPage: function () {
     this.finderPage = document.querySelector(select.containerOf.finderPage);
-    this.finderPageObj = new FinderPage(this.finderPage);
+    this.finderPageObj = new Finder(this.finderPage);
   },
   initAboutPage: function () {
     this.aboutPage = document.querySelector(select.containerOf.aboutPage);
@@ -44,7 +46,7 @@ const app = {
         event.preventDefault();
         const id = this.getAttribute('href').replace('#', '');
 
-        this.activatePage(id);
+        app.activatePage(id);
         window.location.hash = '#' + id;
       });
     }
@@ -55,6 +57,8 @@ const app = {
     this.initFinderPage();
     this.getElements();
     this.initPages();
+
+    AOS.init();
   },
 };
 

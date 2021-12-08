@@ -1,4 +1,4 @@
-import { select, templates } from '../settings.js';
+import { templates } from '../settings.js';
 // import { utils } from '../utils.js';
 
 class AboutPage {
@@ -8,11 +8,11 @@ class AboutPage {
 
   render(wrapper) {
     const generatedHTML = templates.aboutPage();
-    this.aboutWrapper = document.querySelector(select.containerOf.aboutPage);
     this.dom = {};
     this.dom.wrapper = wrapper;
     console.log('wrapper: ', wrapper);
     this.dom.wrapper.innerHTML = generatedHTML;
+    console.log('generatedHTML: ', this.dom.wrapper.innerHTML);
   }
 }
 

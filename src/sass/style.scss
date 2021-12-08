@@ -48,6 +48,20 @@ body {
 .intro {
   height: 140vh;
 }
+
+.finder-wrapper {
+  .box {
+    background: #fff;
+    border-radius: 4px;
+    padding-bottom: 100%;
+  }
+
+  .col-lg-2,
+  .col-md-3,
+  .col-xs-6 {
+    margin-top: 24px !important;
+  }
+}
 // @media (max-width: 580px) {
 //   .card {
 //     background-color: black;
