@@ -1,5 +1,4 @@
 import { templates } from '../settings.js';
-// import { utils } from '../utils.js';
 
 class AboutPage {
   constructor(element) {
@@ -10,9 +9,7 @@ class AboutPage {
     const generatedHTML = templates.aboutPage();
     this.dom = {};
     this.dom.wrapper = wrapper;
-    console.log('wrapper: ', wrapper);
     this.dom.wrapper.innerHTML = generatedHTML;
-    console.log('generatedHTML: ', this.dom.wrapper.innerHTML);
   }
 }
 

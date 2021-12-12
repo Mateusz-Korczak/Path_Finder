@@ -11,12 +11,20 @@ export const select = {
   nav: {
     links: '.navbar-nav a',
   },
+  finder: {
+    grid: '.grid',
+    submitBtn: '.btn-finder',
+  },
 };
 export const classNames = {
   nav: {
     active: 'active',
   },
   pages: {
+    active: 'active',
+  },
+  finder: {
+    field: 'field',
     active: 'active',
   },
 };

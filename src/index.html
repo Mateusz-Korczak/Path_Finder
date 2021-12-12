@@ -62,23 +62,14 @@
         </div>
     </script>
     <script id="template-finder-page" type="text/x-handlebars-template">
-        <div class="cards-wrapper position-absolute bottom-0 end-0 me-sm-5 my-5 col-sm-6 col-lg-9">
-            <div data-aos="fade-up" class="card position-relative border-0 mb-5 ms-5">
-                <div class="card-image">
-                    <img src="images/2.jpg" class="img-fluid" alt="picture">
-                </div>
-                <div class="card-body-right position-absolute translate-middle-x top-0  text-start text-nowrap">
-                    <h2 class="fs-1 fw-bolder pt-5 text-white text-uppercase">minimaize boredom</h2>
-                    <p class="fs-3 text-sm-start text-white">Pick routes that are short and attractive</p>
-                </div>
-            </div>
+        <div class="cards-wrapper position-absolute top-0 start-50 translate-middle text-center ">
+            <h2 class="fs-1 fw-bolder text-white text-uppercase">{{ title }}</h2>
+            <div class="grid container"></div>
+            <input class="btn btn-finder btn-primary mt-3" type="button" value="{{ buttonText }}">
         </div>
     </script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
-
     <script type="module" src="js/app.js"></script>
-
 </body>
 </html>

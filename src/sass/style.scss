@@ -74,3 +74,13 @@ body {
 //     }
 //   }
 // }
+.finder-wrapper {
+  width: 100vw;
+}
+
+.grid .col {
+  padding: 0;
+  height: 50px;
+  width: 50px;
+  background-color: red;
+}

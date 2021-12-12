@@ -17881,4 +17881,15 @@ body {
 .finder-wrapper .col-xs-6 {
   margin-top: 24px !important;
 }
+
+.finder-wrapper {
+  width: 100vw;
+}
+
+.grid .col {
+  padding: 0;
+  height: 50px;
+  width: 50px;
+  background-color: red;
+}
 /*# sourceMappingURL=style.css.map */
