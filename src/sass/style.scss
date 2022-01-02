@@ -82,5 +82,36 @@ body {
   padding: 0;
   height: 50px;
   width: 50px;
-  background-color: red;
+  background-color: rgba(21, 76, 121, 0.2);
+}
+
+.grid .active {
+  background-color: rgba(5, 168, 5, 0.8);
+}
+
+.grid .path {
+  background-color: rgb(255, 38, 0);
+  color: white;
+}
+
+.grid .start {
+  background-color: rgb(255, 38, 0);
+  color: white;
+}
+
+.grid .start::after {
+  font-weight: bold;
+  color: white;
+  content: 'Start ';
+}
+
+.grid .finish {
+  background-color: rgb(255, 38, 0);
+  color: white;
+}
+
+.grid .finish::after {
+  font-weight: bold;
+  color: white;
+  content: 'Meta ';
 }

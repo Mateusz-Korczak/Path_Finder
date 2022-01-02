@@ -26,6 +26,9 @@ export const classNames = {
   finder: {
     field: 'field',
     active: 'active',
+    start: 'start',
+    finish: 'finish',
+    path: 'path',
   },
 };
 export const templates = {
