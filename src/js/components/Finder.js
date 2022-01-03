@@ -27,70 +27,70 @@ class Finder {
     };
 
     switch (thisFinder.step) {
-      case 1:
-        if (thisFinder.grid[field.row][field.col]) {
-          thisFinder.grid[field.row][field.col] = false;
-          fieldElem.classList.remove(classNames.finder.active);
-        } else {
-          const gridValues = Object.values(thisFinder.grid)
-            .map((col) => Object.values(col))
-            .flat();
-          if (gridValues.includes(true)) {
-            const edgeFields = [];
-            if (field.col > 1) {
-              edgeFields.push(thisFinder.grid[field.row][field.col - 1]);
-            }
-            if (field.col < 10) {
-              edgeFields.push(thisFinder.grid[field.row][field.col + 1]);
-            }
-            if (field.row > 1) {
-              edgeFields.push(thisFinder.grid[field.row - 1][field.col]);
-            }
-            if (field.row < 10) {
-              edgeFields.push(thisFinder.grid[field.row + 1][field.col]);
-            }
-
-            if (!edgeFields.includes(true)) {
-              alert(
-                'A new field should touch at least one that is already selected!'
-              );
-              return;
-            }
+    case 1:
+      if (thisFinder.grid[field.row][field.col]) {
+        thisFinder.grid[field.row][field.col] = false;
+        fieldElem.classList.remove(classNames.finder.active);
+      } else {
+        const gridValues = Object.values(thisFinder.grid)
+          .map((col) => Object.values(col))
+          .flat();
+        if (gridValues.includes(true)) {
+          const edgeFields = [];
+          if (field.col > 1) {
+            edgeFields.push(thisFinder.grid[field.row][field.col - 1]);
+          }
+          if (field.col < 10) {
+            edgeFields.push(thisFinder.grid[field.row][field.col + 1]);
+          }
+          if (field.row > 1) {
+            edgeFields.push(thisFinder.grid[field.row - 1][field.col]);
+          }
+          if (field.row < 10) {
+            edgeFields.push(thisFinder.grid[field.row + 1][field.col]);
           }
 
-          thisFinder.grid[field.row][field.col] = true;
-          fieldElem.classList.add(classNames.finder.active);
-        }
-        break;
-      case 2:
-        {
-          const selectedFieldIsStart = utils.arrEqueals(
-            Object.values(field),
-            Object.values(thisFinder.start)
-          );
-
-          if (
-            thisFinder.grid[field.row][field.col] &
-            (Object.keys(thisFinder.start).length === 0)
-          ) {
-            fieldElem.classList.add(classNames.finder.start);
-            thisFinder.start = field;
-            thisFinder.StartFinishField.push(thisFinder.start);
-          } else if (
-            thisFinder.grid[field.row][field.col] &
-            (Object.keys(thisFinder.start).length > 0) &
-            !selectedFieldIsStart &
-            (thisFinder.StartFinishField.length < 2)
-          ) {
-            fieldElem.classList.add(classNames.finder.finish);
-            thisFinder.StartFinishField.push(thisFinder.finish);
-            thisFinder.finish = field;
-          } else {
-            alert('Start or Finish should be a selected path field!');
+          if (!edgeFields.includes(true)) {
+            alert(
+              'A new field should touch at least one that is already selected!'
+            );
             return;
           }
         }
-        break;
+
+        thisFinder.grid[field.row][field.col] = true;
+        fieldElem.classList.add(classNames.finder.active);
+      }
+      break;
+    case 2:
+      {
+        const selectedFieldIsStart = utils.arrEqueals(
+          Object.values(field),
+          Object.values(thisFinder.start)
+        );
+
+        if (
+          thisFinder.grid[field.row][field.col] &
+            (Object.keys(thisFinder.start).length === 0)
+        ) {
+          fieldElem.classList.add(classNames.finder.start);
+          thisFinder.start = field;
+          thisFinder.StartFinishField.push(thisFinder.start);
+        } else if (
+          thisFinder.grid[field.row][field.col] &
+            (Object.keys(thisFinder.start).length > 0) &
+            !selectedFieldIsStart &
+            (thisFinder.StartFinishField.length < 2)
+        ) {
+          fieldElem.classList.add(classNames.finder.finish);
+          thisFinder.StartFinishField.push(thisFinder.finish);
+          thisFinder.finish = field;
+        } else {
+          alert('Start or Finish should be a selected path field!');
+          return;
+        }
+      }
+      break;
     }
   }
 
@@ -108,10 +108,6 @@ class Finder {
 
     while (queue.length > 0) {
       const { row, col } = queue.shift();
-      const currentFieldPos = {
-        row: row,
-        col: col,
-      };
       const currentKey = `${row}x${col}`;
 
       const neightbors = [
@@ -123,6 +119,7 @@ class Finder {
       for (let i = 0; i < neightbors.length; ++i) {
         const nRow = neightbors[i].row;
         const nCol = neightbors[i].col;
+
         if (nRow < 1 || nRow > 10) {
           continue;
         }
@@ -247,15 +244,15 @@ class Finder {
     const thisFinder = this;
     let pageData = null;
     switch (thisFinder.step) {
-      case 1:
-        pageData = { title: 'Draw routes', buttonText: 'Finish drawing' };
-        break;
-      case 2:
-        pageData = { title: 'Pick start and finish', buttonText: 'Compute' };
-        break;
-      case 3:
-        pageData = { title: 'The best route is', buttonText: 'Start again' };
-        break;
+    case 1:
+      pageData = { title: 'Draw routes', buttonText: 'Finish drawing' };
+      break;
+    case 2:
+      pageData = { title: 'Pick start and finish', buttonText: 'Compute' };
+      break;
+    case 3:
+      pageData = { title: 'The best route is', buttonText: 'Start again' };
+      break;
     }
 
     const generatedHTML = templates.finderPage(pageData);

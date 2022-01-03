@@ -108,10 +108,6 @@ class Finder {
 
     while (queue.length > 0) {
       const { row, col } = queue.shift();
-      const currentFieldPos = {
-        row: row,
-        col: col,
-      };
       const currentKey = `${row}x${col}`;
 
       const neightbors = [
@@ -123,6 +119,7 @@ class Finder {
       for (let i = 0; i < neightbors.length; ++i) {
         const nRow = neightbors[i].row;
         const nCol = neightbors[i].col;
+
         if (nRow < 1 || nRow > 10) {
           continue;
         }
